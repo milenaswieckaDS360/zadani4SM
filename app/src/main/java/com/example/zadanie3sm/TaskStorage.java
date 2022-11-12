@@ -13,8 +13,14 @@ public class TaskStorage {
         tasks = new ArrayList<>();
         for(int i = 1; i <=130; i++){
             Task task = new Task();
-            task.setName("Misja do wykonania " + i);
+            task.setName("Misja " + i);
             task.setDone(i % 3 == 0);
+
+            if(i%3==0){
+                task.setCategory(Category.STUDIA);
+            } else{
+                task.setCategory(Category.DOM);
+            }
             tasks.add(task);
         }
     }
@@ -25,6 +31,10 @@ public class TaskStorage {
 
     public List<Task> getTasks() {
         return tasks;
+    }
+
+    public void addTask(Task task){
+        tasks.add(task);
     }
 
     public Task getTask(UUID id) {

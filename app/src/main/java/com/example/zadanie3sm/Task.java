@@ -10,9 +10,21 @@ public class Task {
     private Date date;
     private boolean done;
 
+    private Category category;
+
     public Task(){
         id = UUID.randomUUID();
         date = new Date();
+        category = Category.DOM;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public UUID getId() {
